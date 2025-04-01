@@ -10,7 +10,11 @@ const App = () => {
   ]);
 
   function handleComplete(id) {
-    setTodos(todos.map((todo) => todo.id == id ? {...todo,completed:true}:todo));
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) =>
+        todo.id === id? {...todo, completed:!todo.completed } : todo
+      );
+    });
     // console.log(todo);
   }
   return (
