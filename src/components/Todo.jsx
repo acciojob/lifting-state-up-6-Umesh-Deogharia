@@ -1,17 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const Todo = ({ handleComplete , todos}) => {
+const Todo = ({ todos, handleComplete }) => {
   return (
     <div>
-      <h2>Child Component</h2>
-      {/* Parent */}
+      <h2>Todo List</h2>
       <ul>
-        {todos.map(todo =>(
-          <li key ={todo.id}>
-            {todo.text}
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.task}
             {!todo.completed && (
-              <button onClick={()=>handleComplete(todo.id)} style={{marginLeft:'10px'}}>Complete</button>
-          )}
+              <button onClick={() => handleComplete(todo.id)}>Complete</button>
+            )}
           </li>
         ))}
       </ul>
@@ -19,4 +18,4 @@ const Todo = ({ handleComplete , todos}) => {
   );
 };
 
-export default Todo
+export default Todo;
