@@ -3,6 +3,7 @@ import React from 'react'
 const Todo = ({ handleComplete , todos}) => {
   return (
     <div>
+      <h2>Child Component</h2>
       {/* Parent */}
       <ul>
         {todos.map(todo =>(
